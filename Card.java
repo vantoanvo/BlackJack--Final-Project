@@ -23,41 +23,31 @@ public class Card {
     }
     //setValue() method
     public boolean setValue(int value){
-       this.value = value;
-       this.suit = DEFAULT_SUIT;
-       String abc =getValue();
-       if(abc.equals("0") || abc.equals("14")){
-           this.value = 13;
-           return false;
-        } else {
-           return true;
+        if (isValidValue(value)) {
+            this.value = value;
+            return true;
         }
+
+        return false;
     }
     //setSuit method
     public boolean setSuit(char suit) {
-        this.suit = suit;
-        if(this.value==13 && (this.suit != 'H') && (this.suit != (char)7)){
+        if (isValidSuit(suit)) {
+            this.suit = suit;
             return true;
         }
-        else{
-            this.suit = HEART;
-            return false;
-        }
+
+        return false;
     }
     //setAll() method
-    public boolean setAll(int x, char abc) {
-        this.value = x;
-        this.suit = abc;
-        if(value!=13){
-            if (value==15 || value== 6 || value==-1){
-            value = 5;
-            suit = CLUB;
-            return false;
-            }
+    public boolean setAll(int value, char suit) {
+        if (isValidSuit(suit) && isValidValue(value)) {
+            this.suit = suit;
+            this.value = value;
             return true;
-        } else {
-            return false;
         }
+
+        return false;
     }
     //getValue() method
     public String getValue() {
