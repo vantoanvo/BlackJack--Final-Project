@@ -83,19 +83,17 @@ public class Card {
     /** isValidValue() and isValidSuit() are private methods, they can't be used in CardTester */
     //isValidValue() method
     private boolean isValidValue(int value){
-        this.value = value;
-        if(value>=1 && value<=13){
-            return true;
-        } else {
-            return false;
-        }
+        return value >= 1 && value <= 13;
     }
     //isValidSuit() method
     private boolean isValidSuit(char suit){
-        this.suit = suit;
-        if(suit==HEART||suit==DIAMOND||suit==CLUB||suit==SPADE){
+        switch (suit) {
+        case CLUB:
+        case DIAMOND:
+        case HEART:
+        case SPADE:
             return true;
-        } else {
+        default:
             return false;
         }
     }
