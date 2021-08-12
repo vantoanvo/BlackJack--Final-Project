@@ -1,12 +1,14 @@
 /** This is the Card class for the part-2 */
 public class Card {
     //updated instances variables
-    public static char HEART = (char)3;
-    public static char DIAMOND = (char)4;
-    public static char CLUB = (char)5;
-    public static char SPADE = (char)6;
-    public int DEFAULT_VALUE =1;
-    public static char DEFAULT_SUIT = (char)3;
+    public static final char HEART = (char)3;
+    public static final char DIAMOND = (char)4;
+    public static final char CLUB = (char)5;
+    public static final char SPADE = (char)6;
+
+    public static final int DEFAULT_VALUE = 1;
+    public static final char DEFAULT_SUIT = (char)3;
+
     private char suit;
     private int value;
     //No-arg Constructor
