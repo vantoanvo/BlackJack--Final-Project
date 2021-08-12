@@ -36,7 +36,7 @@ public class Card {
     //setSuit method
     public boolean setSuit(char suit) {
         this.suit = suit;
-        if(this.value==13 & (this.suit != 'H') & (this.suit != (char)7)){
+        if(this.value==13 && (this.suit != 'H') && (this.suit != (char)7)){
             return true;
         }
         else{
@@ -61,7 +61,7 @@ public class Card {
     }
     //getValue() method
     public String getValue() {
-        if (value > 1 & value < 11) {
+        if (value > 1 && value < 11) {
             return Integer.toString(value);
         } else if (value == 1) {
             return "A";
@@ -84,7 +84,7 @@ public class Card {
     }
     //equals() method
     public boolean equals(Card otherCard) {
-        if((value == otherCard.value)& (suit == otherCard.suit)){
+        if((value == otherCard.value) && (suit == otherCard.suit)){
             return true;
         } else {
             return false;
@@ -94,7 +94,7 @@ public class Card {
     //isValidValue() method
     private boolean isValidValue(int value){
         this.value = value;
-        if(value>=1 & value<=13){
+        if(value>=1 && value<=13){
             return true;
         } else {
             return false;
