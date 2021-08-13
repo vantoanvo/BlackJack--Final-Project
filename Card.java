@@ -31,11 +31,11 @@ public class Card {
      * @param suit the card's suit of HEART, DIAMOND, CLUB, SPADE
      */
    public Card(int value, char suit){
+        if(!isValidValue(value) || !isValidSuit(suit)){
+            System.exit(0);
+        }
         this.value = value;
         this.suit = suit;
-       if(!isValidValue(value) || !isValidSuit(suit)){
-           System.exit(0);
-       }
     }
 
     /**
@@ -77,8 +77,6 @@ public class Card {
             this.value = value;
             return true;
         }
-        value = 5;
-        suit = CLUB;
         return false;
     }
 
