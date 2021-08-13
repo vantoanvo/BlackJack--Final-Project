@@ -125,7 +125,7 @@ public class Card {
      */
     public boolean equals(Card otherCard) {
 
-        return (value == otherCard.value) & (suit == otherCard.suit);
+        return (value == otherCard.value) && (suit == otherCard.suit);
     }
 
     /**
