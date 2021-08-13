@@ -24,8 +24,7 @@ public class Card {
 
     /**
      * Full constructor of the Card class
-     * Call the isValidValue() and isValidSuit() to check the input
-     * it will shut down the program if the input value is not in the range
+     * It will shut down the program if the value or suit are invalid
      * this should return a new Card with specified values or shut down the program
      * @param value the card's value from 1-13
      * @param suit the card's suit of HEART, DIAMOND, CLUB, SPADE
