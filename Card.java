@@ -8,8 +8,8 @@ public class Card {
     public static final char DIAMOND = (char)4;
     public static final char CLUB = (char)5;
     public static final char SPADE = (char)6;
-    public final int DEFAULT_VALUE =1;
-    public final static char DEFAULT_SUIT = (char)3;
+    public static final int DEFAULT_VALUE = 1;
+    public static final char DEFAULT_SUIT = (char)3;
     private char suit;
     private int value;
 
