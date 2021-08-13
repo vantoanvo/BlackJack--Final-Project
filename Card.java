@@ -8,8 +8,8 @@ public class Card {
     public static final char DIAMOND = (char)4;
     public static final char CLUB = (char)5;
     public static final char SPADE = (char)6;
-    public final int DEFAULT_VALUE =1;
-    public final static char DEFAULT_SUIT = (char)3;
+    public static final int DEFAULT_VALUE = 1;
+    public static final char DEFAULT_SUIT = (char)3;
     private char suit;
     private int value;
 
@@ -31,11 +31,11 @@ public class Card {
      * @param suit the card's suit of HEART, DIAMOND, CLUB, SPADE
      */
    public Card(int value, char suit){
+        if(!isValidValue(value) || !isValidSuit(suit)){
+            System.exit(0);
+        }
         this.value = value;
         this.suit = suit;
-       if(!isValidValue(value) || !isValidSuit(suit)){
-           System.exit(0);
-       }
     }
 
     /**
@@ -77,8 +77,6 @@ public class Card {
             this.value = value;
             return true;
         }
-        value = 5;
-        suit = CLUB;
         return false;
     }
 
@@ -127,7 +125,7 @@ public class Card {
      */
     public boolean equals(Card otherCard) {
 
-        return (value == otherCard.value) & (suit == otherCard.suit);
+        return (value == otherCard.value) && (suit == otherCard.suit);
     }
 
     /**
