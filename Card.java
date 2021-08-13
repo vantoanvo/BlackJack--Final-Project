@@ -17,8 +17,8 @@ public class Card {
      * No-arg constructor, initialize the card with the default value and suit
      * return a new ACE HEART
      */
-    public Card(){
-        this.value=DEFAULT_VALUE;
+    public Card() {
+        this.value = DEFAULT_VALUE;
         this.suit = DEFAULT_SUIT;
     }
 
@@ -30,8 +30,8 @@ public class Card {
      * @param value the card's value from 1-13
      * @param suit the card's suit of HEART, DIAMOND, CLUB, SPADE
      */
-   public Card(int value, char suit){
-        if(!isValidValue(value) || !isValidSuit(suit)){
+   public Card(int value, char suit) {
+        if (!isValidValue(value) || !isValidSuit(suit)) {
             System.exit(0);
         }
         this.value = value;
@@ -44,13 +44,14 @@ public class Card {
      * @param value input an integer number from 1-13
      * @return true or false if the value is in 1-13
      */
-    public boolean setValue(int value){
-        if(isValidValue(value)){
+    public boolean setValue(int value) {
+        if (isValidValue(value)) {
             this.value = value;
             return true;
         }
         return false;
     }
+
     /**
      * Set the card's suit
      * This might change the suit's value
@@ -58,7 +59,7 @@ public class Card {
      * @return true or false depend on the suit is in the range or not
      */
     public boolean setSuit(char suit) {
-        if(isValidSuit(suit)){
+        if (isValidSuit(suit)) {
             this.suit = suit;
             return true;
         }
@@ -84,7 +85,6 @@ public class Card {
      * This method changes integer values to string
      * @return the card's value in form of string
      */
-    //getValue() method
     public String getValue() {
         if (value > 1 & value < 11) {
             return Integer.toString(value);
@@ -96,16 +96,16 @@ public class Card {
             return "Q";
         } else if (value == 13){
             return "K";
-        } else
+        } else {
             return "" +this.value;
         }
+    }
 
     /**
      * Get the suit after setting the value
      * @return the card's suit in form of ASCII symbols
      */
-    public char getSuit(){
-
+    public char getSuit() {
         return suit;
     }
 
@@ -113,8 +113,7 @@ public class Card {
      * Print out the value and suit when any card's object is created
      * @return value and suit of this card
      */
-    public String toString(){
-
+    public String toString() {
         return this.getValue() + " " + this.suit;
     }
 
@@ -124,23 +123,22 @@ public class Card {
      * @return true or false depends on they are the same or not
      */
     public boolean equals(Card otherCard) {
-
         return (value == otherCard.value) && (suit == otherCard.suit);
     }
 
     /**
      * Check the input value if it is valid or not
      * Return true if it is in the range, otherwise return false
-     * */
-    private boolean isValidValue(int value){
-        return value>=1 && value<=13;
+     */
+    private boolean isValidValue(int value) {
+        return value >= 1 && value <= 13;
     }
 
     /**
      * Check the suit value if it is value or not
      * Return true if it is valid, otherwise return false
-     * */
-    private boolean isValidSuit(char suit){
+     */
+    private boolean isValidSuit(char suit) {
         switch (suit){
             case CLUB:
             case DIAMOND:
@@ -156,15 +154,15 @@ public class Card {
      * This method draw a card with a value and a suit
      * Used in part-1
      */
-    public void drawCard(){
+    public void drawCard() {
         System.out.println("-------");
-        System.out.println("|"+ suit + "   "+ suit + "|");
+        System.out.println("|" + suit + "   " + suit + "|");
         if(value==10){
             System.out.println("| " + getValue() + "  |");
         } else {
             System.out.println("|  " + getValue() + "  |");
         }
-        System.out.println("|"+ suit + "   "+ suit + "|");
+        System.out.println("|" + suit + "   " + suit + "|");
         System.out.println("-------");
     }
 }
